@@ -1,17 +1,35 @@
-# Crie uma lista composta que recebe 5 nomes e 5 idades de clientes, utilizando o for e o if, verifique quais clientes são maiores de idade e quais são menores de idade e mostre na tela a seguinte frase para cada um deles: 'Fulano é maior de idade' ou 'Fulana é menor de idade' e  também quantos são maiores e quantos são menores de idade.
+''' 01 - Crie um programa que declare uma matriz de dimensão 3×3 e preencha com valores lidos pelo teclado. No final, mostre a matriz na tela, com essa formatação:
 
-maiores = menores = 0
-lista = []
-for i in range(5):
-    nome = input(f'Digite o {i+1}º nome: ').capitalize()
-    idade = int(input(f'Digite a idade do(a) {nome}: '))
-    lista.append([nome, idade])
+[  1  ][  2  ][  3  ]
+[  4  ][  5  ][  6  ]
+[  7  ][  8  ][  9  ] 
+
+matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]'''
+
+# Modo 1
+matriz = []
+for i in range(3):
+    linha = []
+    for j in range(3):
+        valor = int(input(f'Digite o valor da {i+1}ª linha e {j+1}ª coluna: '))
+        linha.append(valor)
+    matriz.append(linha)
+print('\nA matriz declarada foi:\n')
+for i in matriz:
+    print(f'    [ {i[0]} ]   [ {i[1]} ]   [ {i[2]} ]')
+    
+
+# Modo 2
+matriz = []
+for i in range(3):
+    linha = []
+    for j in range(3):
+        valor = int(input(f'Digite o valor da {i+1}ª linha e {j+1}ª coluna: '))
+        linha.append(valor)
+    matriz.append(linha)
+print('\nA matriz declarada foi:')
+for i in matriz:
     print()
-for i in lista:
-    if i[1] >= 18:
-        print(f'{i[0]} é maior de idade')
-        maiores += 1
-    else:
-        print(f'{i[0]} é menor de idade')
-        menores += 1
-print(f'\n{maiores} pessoas são maiores de idade.\n{menores} pessoas são menores de idade.')
+    for j in i:
+        print(f'    [ {j} ]', end='')
+        

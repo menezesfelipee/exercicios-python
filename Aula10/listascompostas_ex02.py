@@ -1,35 +1,19 @@
-''' 01 - Crie um programa que declare uma matriz de dimensão 3×3 e preencha com valores lidos pelo teclado. No final, mostre a matriz na tela, com essa formatação:
+'''02 - Aprimore o desafio anterior, mostrando no final:
+   A) A soma de todos os valores pares digitados.
+   B) A soma dos valores da terceira coluna. 
+   C) O maior valor da segunda linha.'''
 
-[  1  ][  2  ][  3  ]
-[  4  ][  5  ][  6  ]
-[  7  ][  8  ][  9  ] 
-
-matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]'''
-
-# Modo 1
 matriz = []
+somaPar = soma3Coluna = 0
 for i in range(3):
     linha = []
     for j in range(3):
         valor = int(input(f'Digite o valor da {i+1}ª linha e {j+1}ª coluna: '))
         linha.append(valor)
+        if valor % 2 == 0:
+            somaPar += valor
     matriz.append(linha)
-print('\nA matriz declarada foi:\n')
-for i in matriz:
-    print(f'    [ {i[0]} ]   [ {i[1]} ]   [ {i[2]} ]')
-    
-
-# Modo 2
-matriz = []
-for i in range(3):
-    linha = []
-    for j in range(3):
-        valor = int(input(f'Digite o valor da {i+1}ª linha e {j+1}ª coluna: '))
-        linha.append(valor)
-    matriz.append(linha)
-print('\nA matriz declarada foi:')
-for i in matriz:
-    print()
-    for j in i:
-        print(f'    [ {j} ]', end='')
-        
+    soma3Coluna += linha[2]
+print(f'''\nA soma de todos os valores pares é de {somaPar}.
+A soma dos valores da terceira coluna é de {soma3Coluna}.
+O maior valor da segunda linha é {max(matriz[1])}.''')

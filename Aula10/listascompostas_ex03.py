@@ -1,19 +1,24 @@
-'''02 - Aprimore o desafio anterior, mostrando no final:
-   A) A soma de todos os valores pares digitados.
-   B) A soma dos valores da terceira coluna. 
-   C) O maior valor da segunda linha.'''
+#03 - Faça um programa que leia nome e peso de várias pessoas, guardando tudo em uma lista, depois do dado inserido, pergunte ao usuário se ele quer continuar, se ele não quiser pare o programa. No final mostre:
+   # Quantas pessoas foram cadastradas
+   # Mostre o maior peso
+   # Mostre o menor peso
 
-matriz = []
-somaPar = soma3Coluna = 0
-for i in range(3):
-    linha = []
-    for j in range(3):
-        valor = int(input(f'Digite o valor da {i+1}ª linha e {j+1}ª coluna: '))
-        linha.append(valor)
-        if valor % 2 == 0:
-            somaPar += valor
-    matriz.append(linha)
-    soma3Coluna += linha[2]
-print(f'''\nA soma de todos os valores pares é de {somaPar}.
-A soma dos valores da terceira coluna é de {soma3Coluna}.
-O maior valor da segunda linha é {max(matriz[1])}.''')
+lista = []
+maior = menor = 0
+while True:
+    pessoa = input('Digite o nome: ')
+    peso = float(input('Digite o peso: '))
+    lista.append([pessoa, peso])
+    continuar = input('\nVocê quer cadastrar mais pessoas? [S/N] ').strip().upper()[0]
+    while continuar not in 'SN':
+        continuar = input('Comando inválido. Você quer cadastrar mais pessoas? [S/N] ').strip().upper()[0]
+    if continuar == 'N':
+        break
+for i in lista:
+    if i[1] >= maior:
+        maior = i[1]
+    if i[1] < menor or menor == 0:
+        menor = i[1]
+print(f'''Foram cadastradas {len(lista)} pessoas.
+O maior peso cadastrado foi {maior} kg.
+O menor peso cadastrado foi {menor} kg.''')
