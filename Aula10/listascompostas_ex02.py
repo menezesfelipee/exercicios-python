@@ -15,8 +15,8 @@ for i in range(3):
         linha.append(valor)
     matriz.append(linha)
 print('\nA matriz declarada foi:\n')
-for a in matriz:
-    print(f'    [ {a[0]} ]   [ {a[1]} ]   [ {a[2]} ]')
+for i in matriz:
+    print(f'    [ {i[0]} ]   [ {i[1]} ]   [ {i[2]} ]')
     
 
 # Modo 2
@@ -32,3 +32,4 @@ for i in matriz:
     print()
     for j in i:
         print(f'    [ {j} ]', end='')
+        

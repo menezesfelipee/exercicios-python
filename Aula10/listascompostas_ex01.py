@@ -2,10 +2,11 @@
 
 maiores = menores = 0
 lista = []
-for n in range(5):
-    nome = input(f'Digite o {n+1}º nome: ')
+for i in range(5):
+    nome = input(f'Digite o {i+1}º nome: ').capitalize()
     idade = int(input(f'Digite a idade do(a) {nome}: '))
     lista.append([nome, idade])
+    print()
 for i in lista:
     if i[1] >= 18:
         print(f'{i[0]} é maior de idade')
@@ -13,4 +14,4 @@ for i in lista:
     else:
         print(f'{i[0]} é menor de idade')
         menores += 1
-print(f'{maiores} pessoas são maiores de idade.\n{menores} pessoas são menores de idade.')
+print(f'\n{maiores} pessoas são maiores de idade.\n{menores} pessoas são menores de idade.')
