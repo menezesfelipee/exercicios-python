@@ -4,7 +4,7 @@
    C) O maior valor da segunda linha.'''
 
 matriz = []
-somaPar = 0
+somaPar = soma3Coluna = 0
 for i in range(3):
     linha = []
     for j in range(3):
@@ -13,6 +13,7 @@ for i in range(3):
         if valor % 2 == 0:
             somaPar += valor
     matriz.append(linha)
+    soma3Coluna += linha[2]
 print(f'''\nA soma de todos os valores pares é de {somaPar}.
-A soma dos valores da terceira coluna é de {sum(matriz[2])}.
+A soma dos valores da terceira coluna é de {soma3Coluna}.
 O maior valor da segunda linha é {max(matriz[1])}.''')

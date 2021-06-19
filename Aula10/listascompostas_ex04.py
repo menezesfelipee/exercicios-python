@@ -4,6 +4,7 @@
    # Mostre o menor peso
 
 lista = []
+maior = menor = 0
 while True:
     pessoa = input('Digite o nome: ')
     peso = float(input('Digite o peso: '))
@@ -13,7 +14,6 @@ while True:
         continuar = input('Comando inválido. Você cadastrar mais pessoas? [S/N] ').strip().upper()[0]
     if continuar == 'N':
         break
-maior = menor = 0
 for a in lista:
     if a[1] >= maior:
         maior = a[1]
