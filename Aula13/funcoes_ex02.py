@@ -6,7 +6,6 @@ def valor(v):
     else:
         return 'N'
 
-
 n = int(input('Digite um número: '))
 
 print(f'O valor {n} digitado é: {valor(n)}')
