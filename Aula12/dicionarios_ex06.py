@@ -11,10 +11,10 @@ for i in range(15):
     aluno['notas'] = list()
     media = 0
     for j in range(5):
-        nota = round(uniform(0,10), 2)  # 'uniform' sorteia um ponto flutuante no intervalo dado, inclusive o limite superior e inferior  ||  'round' arrendoda para a quantidade de casas decimais dada
+        nota = round(uniform(0,10), 2)     # 'uniform' sorteia um ponto flutuante no intervalo dado, inclusive o limite superior e inferior  ||  'round' arrendoda para a quantidade de casas decimais dada
         aluno['notas'].append(nota)
-        media += (nota/5)               # (nota1 + nota2 + nota3 + nota4 + nota5) / 5   =   (nota1 / 5) + (nota2 / 5) + (nota3 / 5) + (nota4 / 5) + (nota5 / 5)
-    aluno['media'] = round(media, 2)    # Já a arredonda a média para a 2 casas decimais
+        media += (nota/5)                  # (nota1 + nota2 + nota3 + nota4 + nota5) / 5   =   (nota1 / 5) + (nota2 / 5) + (nota3 / 5) + (nota4 / 5) + (nota5 / 5)
+    aluno['media'] = round(media, 2)       # Já a arredonda a média para a 2 casas decimais
     if aluno['media'] >= 7:
         aluno['situacao'] = 'aprovado'
     elif 5 <= aluno['media'] < 7:
@@ -32,8 +32,12 @@ for i in range(15):
 ## VOCÊ PODE MISTURAR A FORMATAÇÃO DE ESPAÇOS E DE CASAS DECIMAIS ##
 # <15.3f : vai guardar exatamente 15 espaços para caracteres para a sua coluna, alinhando À ESQUERDA, e coloca exatamente 3 casas decimais no float
 
-print(f'{"Nome":>6} {"Notas":>37} {"Média":>30} {"Situação":>13}')
+print('┏', '━'*15, '┳', '━'*44, '┳', '━'*9, '┳', '━'*14, '┓', sep='')
+print(f'┃{"Nome":^15}┃{"Notas":^44}┃{"Média":^9}┃{"Situação":^14}┃')
+print('┣', '━'*15, '╋', '━'*44, '╋', '━'*9, '╋', '━'*14, '┫', sep='')
 
 for aluno in classe:
-    notas = '  -  '.join([f'{n:.2f}' for n in aluno['notas']])
-    print(f'{aluno["nome"]:<20} {notas:<48} {aluno["media"]:<10.2f} {aluno["situacao"]}')
+    notas = ' -  '.join([f'{n:<5.2f}' for n in aluno['notas']])
+    print(f'┃{aluno["nome"]:<15}┃{notas:^44}┃{aluno["media"]:<9.2f}┃{aluno["situacao"]:<14}┃')
+
+print('┗', '━'*15, '┻', '━'*44, '┻', '━'*9, '┻', '━'*14, '┛', sep='')
