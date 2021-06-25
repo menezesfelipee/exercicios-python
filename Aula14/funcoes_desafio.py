@@ -17,7 +17,7 @@ def converterDia(data):
                       int(mes) in [3, 5, 8, 10] and int(dia) > 30,
                       bissexto == True and int(mes) == 2 and int(dia) > 29,
                       bissexto == False and int(mes) == 2 and int(dia) > 28]
-    # Verificando as condições da lista. Utilizando o 'any', o basta que uma das condições da lista seja satisfeita para que seja True:
+    # Verificando as condições da lista. Utilizando o 'any', basta que uma das condições da lista seja satisfeita para que seja True:
     if  any(listaCondicoes):
         return 'A data não é válida.'
     else:
