@@ -6,8 +6,8 @@
 def converterDia(data):
     listaMeses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
     dia, mes, ano = data.split('/')
-    listaCondicoes = [int(dia) < 1,
-                      int(dia) > 31,
+    listaCondicoes = [int(dia) < 1 or int(dia) > 31,
+                      int(mes) < 1 or int(mes) > 12,
                       int(mes) in [3, 5, 8, 10] and int(dia) > 30,
                       int(ano) % 4 == 0 and int(mes) == 2 and int(dia) > 29,
                       int(ano) % 4 != 0 and int(mes) == 2 and int(dia) > 28]
