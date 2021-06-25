@@ -12,7 +12,6 @@ def converterDia(data):
         return f'{dia} de {listaMeses[int(mes) - 1]} de {ano}'
 
 data = input('Entre com a data no formato DD/MM/AAAA: ')
-
 print(converterDia(data))
 
 
@@ -22,9 +21,7 @@ from datetime import datetime
 
 def converterDia(data):
     listaMeses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
-
     dia, mes, ano = data.split('/')
-
     try:
         datetime(int(ano),int(mes),int(dia))
         return f'{dia} de {listaMeses[int(mes) - 1]} de {ano}'
@@ -32,8 +29,7 @@ def converterDia(data):
         return 'A data não é válida.'
 
 data = input('Entre com a data no formato DD/MM/AAAA: ')
-
-print((converterDia(data)))
+print(converterDia(data))
 
 
 # Modo 3 (Bibliotecas Datetime e Locale)
@@ -52,4 +48,4 @@ def converterDia(data):
 
 data = input('Entre com a data no formato DD/MM/AAAA: ')
 
-print((converterDia(data)))
+print(converterDia(data))
