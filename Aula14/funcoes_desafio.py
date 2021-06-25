@@ -12,8 +12,8 @@ def converterDia(data):
     else:
         bissexto = False
     # Colocando as condições de data inválida numa lista:
-    listaCondicoes = [int(dia) < 1 or int(dia) > 31,
-                      int(mes) < 1 or int(mes) > 12,
+    listaCondicoes = [int(dia) not in range(1, 32),
+                      int(mes) not in range(1, 13),
                       int(mes) in [3, 5, 8, 10] and int(dia) > 30,
                       bissexto == True and int(mes) == 2 and int(dia) > 29,
                       bissexto == False and int(mes) == 2 and int(dia) > 28]
