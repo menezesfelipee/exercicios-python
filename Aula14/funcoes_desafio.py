@@ -26,37 +26,37 @@ def converterDia(data):
 data = input('Entre com a data no formato DD/MM/AAAA: ')
 print(converterDia(data))
 
-# # Modo 2 (Biblioteca Datetime)
+# Modo 2 (Biblioteca Datetime)
 
-# from datetime import datetime
+from datetime import datetime
 
-# def converterDia(data):
-#     listaMeses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
-#     dia, mes, ano = data.split('/')
-#     try:
-#         datetime(int(ano),int(mes),int(dia))
-#         return f'{dia} de {listaMeses[int(mes) - 1]} de {ano}'
-#     except ValueError:
-#         return 'A data não é válida.'
+def converterDia(data):
+    listaMeses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+    dia, mes, ano = data.split('/')
+    try:
+        datetime(int(ano),int(mes),int(dia))
+        return f'{dia} de {listaMeses[int(mes) - 1]} de {ano}'
+    except ValueError:
+        return 'A data não é válida.'
 
-# data = input('Entre com a data no formato DD/MM/AAAA: ')
-# print(converterDia(data))
+data = input('Entre com a data no formato DD/MM/AAAA: ')
+print(converterDia(data))
 
 
-# # Modo 3 (Bibliotecas Datetime e Locale)
+# Modo 3 (Bibliotecas Datetime e Locale)
 
-# from datetime import datetime
-# import locale
+from datetime import datetime
+import locale
 
-# locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 
-# def converterDia(data):
-#     try:
-#         data = datetime.strptime(data, "%d/%m/%Y")
-#         return data.strftime("%d de %B de %Y")
-#     except ValueError:
-#         return 'A data não é válida.'
+def converterDia(data):
+    try:
+        data = datetime.strptime(data, "%d/%m/%Y")
+        return data.strftime("%d de %B de %Y")
+    except ValueError:
+        return 'A data não é válida.'
 
-# data = input('Entre com a data no formato DD/MM/AAAA: ')
+data = input('Entre com a data no formato DD/MM/AAAA: ')
 
-# print(converterDia(data))
+print(converterDia(data))
